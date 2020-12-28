@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.global')
 
 @section('content')
 <div class="container">
@@ -21,3 +21,5 @@
     </div>
 </div>
 @endsection
+
+@section('title')Home @endsection
