@@ -8,10 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Larashop @yield("title")</title>
+    <title>Bukuku @yield("title")</title>
     <link rel="stylesheet" href="{{asset('polished/polished.min.css')}}">
-    <link rel="stylesheet" href="{{asset('polished/iconic/css/open-iconic-
-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('polished/iconic/css/open-iconic-bootstrap.min.css')}}">
     <style>
         .grid-highlight {
             padding-top: 1rem;
@@ -33,15 +32,13 @@ bootstrap.min.css')}}">
     <script type="text/javascript">
         document.documentElement.className =
             document.documentElement.className.replace('no-js', 'js') +
-            (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#
-                    BasicStructure ", "
-                    1.1 ") ? ' svg' : ' no-svg');
+            (document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure ", "1.1 ") ? ' svg' : ' no-svg');
     </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand p-0">
-        <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html"> Larashop </a>
+        <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html"> Bukuku </a>
         <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button">
             <span class="oi oi-menu"></span>
         </button>
@@ -60,8 +57,7 @@ bootstrap.min.css')}}">
                 <li>
                     <form action="{{route("logout")}}" method="POST">
                         @csrf
-                        <button class="dropdown-item" style="cursor:pointer">Sign
-                            Out</button>
+                        <button class="dropdown-item" style="cursor:pointer">Sign Out</button>
                     </form>
                 </li>
             </div>
@@ -74,6 +70,11 @@ bootstrap.min.css')}}">
                     <input class="border-dark form-control d-block d-md-nonemb-4" type="text" placeholder="Search"
                         aria-label="Search" />
                     <li><a href="/home"><span class="oi oi-home"></span>Home</a></li>
+                    <li>
+                        <a href="{{route('users.index')}}">
+                        <span class="oi oi-people"></span> Manage Users
+                        </a>
+                        </li>
                     <div class="d-block d-md-none">
                         <div class="dropdown-divider"></div>
                         <li><a href="#"> Profile</a></li>
@@ -95,7 +96,7 @@ bootstrap.min.css')}}">
                     <div class="col-md-12 pl-3 pt-2">
                         <div class="pl-3">
                             <h3>@yield("pageTitle")</h3>
-                            <br/ </div> </div> </div> @yield("content") </div> </div> </div> <script
+                            <br/> </div> </div> </div> @yield("content") </div> </div> </div> <script
                                 src="https://code.jquery.com/jquery-3.3.1.min.js"
                                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
                             </script>
