@@ -91,7 +91,7 @@ class CategoryController extends Controller
     $category->name = $name;
     $category->slug = $slug;if($request->file('image')){
         if($category->image && file_exists(storage_path('app/public/' .$category->image))){
-    \Storage::delete('public/' . $category->name);
+    \Storage::delete('public/' . $category->image);
     }
     $new_image = $request->file('image')->store('category_images', 'public');
     $category->image = $new_image;
@@ -137,4 +137,10 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('status', 'Category permanently deleted');
         }
     }
+
+    public function ajaxSearch(Request $request){
+        $keyword = $request->get('q');
+        $categories = \App\Category::where("name", "LIKE", "%$keyword%")->get();
+        return $categories;
+        }
 }
